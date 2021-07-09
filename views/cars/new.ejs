@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/cars" method="POST">
+<label>Car Model:
+<select value="Select Vehicle" name="model">
+    <option value="Challenger">Challenger</option>
+    <option value="Charger">Charger</option>
+    <option value="Durango">Durango</option>
+    <option value="Journey">Journey</option>
+    <option value="Grand Caravan">Grand Caravan</option>
+    <option value="Ram 1500">Ram 1500</option>
+    </select>
+</label>
+<br/>
+<label>Model Year: 
+<input type="number" value="2000" name="year" min="2000" max="2021">
+</label>
+</form>
+
+<%- include('../partials/footer') %>
