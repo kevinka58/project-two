@@ -21,7 +21,12 @@ async function index(req, res) {
 
 
 async function show(req, res) {
-
+    try{
+        const showPage = await Car.findById(req.params.id);
+        res.render('cars/show', {title: 'Challenger Review', cars: showPage})
+    } catch (err) {
+        res.send(err)
+    }
 }
 
 function newCar(req, res) {
@@ -32,7 +37,7 @@ function newCar(req, res) {
 
 async function create(req, res) {
     try{
-        const newCar = await Dog.create(req.body);
+        const newCar = await Car.create(req.body);
         res.redirect(`/cars/${newCar._id}`);
     } catch (err) {
         res.send(err)
