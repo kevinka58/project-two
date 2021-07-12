@@ -3,9 +3,20 @@ const Car = require('../models/cars');
 module.exports = {
     show,
     new: newCar,
-    create
+    create,
+    index
 };
-
+async function index(req, res) {
+    try {
+        const foundCars = await Car.find({});
+        res.render('challenger/index', {
+            title: 'All Cars',
+            cars: foundCars,
+            })
+        } catch (err) {
+            res.send(err);
+    }
+}
 
 function show(req, res) {
     Car.findById(req.params.id, function(err, cars){

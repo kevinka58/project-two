@@ -33,12 +33,12 @@ app.use(methodOverride('_method'))
 app.use('/', indexRouter);
 app.use('/', commentsRouter);
 app.use('/cars', carsRouter);
-app.use('/cars', challengerRouter);
-app.use('/cars', chargerRouter);
-app.use('/cars', durangoRouter);
-app.use('/cars', caravanRouter);
-app.use('/cars', ramRouter);
-app.use('/cars', journeyRouter);
+app.use('/challenger', challengerRouter);
+app.use('/charger', chargerRouter);
+app.use('/durango', durangoRouter);
+app.use('/caravan', caravanRouter);
+app.use('/ram', ramRouter);
+app.use('/journey', journeyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
