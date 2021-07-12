@@ -18,7 +18,7 @@ const carSchema = new Schema({
     enum: [
       "Challenger",
       "Charger",
-      "Duragno",
+      "Durango",
       "Journey",
       "Grand Caravan",
       "Ram 1500",

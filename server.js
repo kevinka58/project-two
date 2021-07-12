@@ -3,12 +3,19 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const methodOverride = require('method-override')
 require('dotenv').config()
 require("./config/database")
 
 const indexRouter = require('./routes/index');
 const commentsRouter = require('./routes/comments');
 const carsRouter = require('./routes/cars');
+const challengerRouter = require('./routes/cars');
+const chargerRouter = require('./routes/challenger');
+const durangoRouter = require('./routes/durango');
+const caravanRouter = require('./routes/caravan');
+const journeyRouter = require('./routes/journey');
+const ramRouter = require('./routes/ram');
 
 const app = express();
 
@@ -21,10 +28,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
 app.use('/', commentsRouter);
 app.use('/cars', carsRouter);
+app.use('/cars', challengerRouter);
+app.use('/cars', chargerRouter);
+app.use('/cars', durangoRouter);
+app.use('/cars', caravanRouter);
+app.use('/cars', ramRouter);
+app.use('/cars', journeyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

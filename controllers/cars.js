@@ -4,7 +4,8 @@ module.exports = {
     index,
     show,
     new: newCar,
-    create
+    create,
+    delete: deleteCar,
 };
 
 async function index(req, res) {
@@ -21,7 +22,10 @@ async function index(req, res) {
 
 function show(req, res) {
     Car.findById(req.params.id, function(err, cars){
-        res.render('cars/challenger', {title: 'Challenger Review', cars})
+        res.render('cars/show', {
+            title: 'Challenger Review', 
+            cars,
+        })
     })
 }
 
@@ -37,5 +41,15 @@ async function create(req, res) {
         res.redirect(`/cars/${newCar._id}`);
     } catch (err) {
         res.send(err)
+    }
+}
+
+async function deleteCar(req, res) {
+    try{
+    const car = await Car.findById(req.params.id)
+    await car.remove()
+    res.redirect('/cars')
+} catch (err) {
+    res.send(err)
     }
 }

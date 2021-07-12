@@ -7,8 +7,19 @@
         </tr>
     </thead>
     <tbody>
+        <a href="/cars/challenger">Challenger area</a>
         <% cars.forEach(function(c) { %>
             <tr>
+                <td>
+                <form action="/cars/<%= c._id %>?_method=DELETE"
+                    id="delete-form" method="POST">
+                <button type="submit">X</button>
+            </form>
+                </td>
+                <td><%= c.model %></td>
+                <td><%= c.year %></td>
+                <td><%= c.color %></td>
+                <td><%= c.titleCondition %></td>
                 <td><a href="/cars/<%= c._id %>">Click here</a></td>
             </tr>
             <% }); %>
