@@ -2,10 +2,17 @@
 <table>
     <thead>
         <tr>
-            <th>Car</th>
+            <th>Challenger</th>
             <th>Model</th>
         </tr>
     </thead>
+    <tbody>
+        <% cars.forEach(function(c) { %>
+            <tr>
+                <td><a href="/cars/<%= c._id %>">Click here</a></td>
+            </tr>
+            <% }); %>
+    </tbody>
 </table>
   
 <%- include('../partials/footer') %>

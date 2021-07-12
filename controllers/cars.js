@@ -19,14 +19,10 @@ async function index(req, res) {
     }
 }
 
-
-async function show(req, res) {
-    try{
-        const showPage = await Car.findById(req.params.id);
-        res.render('cars/show', {title: 'Challenger Review', cars: showPage})
-    } catch (err) {
-        res.send(err)
-    }
+function show(req, res) {
+    Car.findById(req.params.id, function(err, cars){
+        res.render('cars/challenger', {title: 'Challenger Review', cars})
+    })
 }
 
 function newCar(req, res) {
