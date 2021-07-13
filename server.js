@@ -10,12 +10,6 @@ require("./config/database")
 const indexRouter = require('./routes/index');
 const commentsRouter = require('./routes/comments');
 const carsRouter = require('./routes/cars');
-const challengerRouter = require('./routes/cars');
-const chargerRouter = require('./routes/challenger');
-const durangoRouter = require('./routes/durango');
-const caravanRouter = require('./routes/caravan');
-const journeyRouter = require('./routes/journey');
-const ramRouter = require('./routes/ram');
 
 const app = express();
 
@@ -33,12 +27,6 @@ app.use(methodOverride('_method'))
 app.use('/', indexRouter);
 app.use('/', commentsRouter);
 app.use('/cars', carsRouter);
-app.use('/challenger', challengerRouter);
-app.use('/charger', chargerRouter);
-app.use('/durango', durangoRouter);
-app.use('/caravan', caravanRouter);
-app.use('/ram', ramRouter);
-app.use('/journey', journeyRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
