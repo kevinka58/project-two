@@ -2,7 +2,6 @@ const Car = require('../models/cars');
 
 module.exports = {
     create,
-    comment
 }
 
 function create(req, res) {
@@ -14,6 +13,3 @@ Car.findById(req.params.id, function(err, car) {
     })
 }
 
-function comment(req, res) {
-    
-}

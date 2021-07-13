@@ -1,5 +1,6 @@
 const Car = require('../models/cars');
 
+
 module.exports = {
     index,
     show,
@@ -23,10 +24,12 @@ async function index(req, res) {
 function show(req, res) {
     Car.findById(req.params.id, function(err, cars){
         res.render('cars/show', {
-            title: 'Challenger Review', 
+            title: (`${cars.model} Review`), 
             cars,
-        })
-    })
+
+            }
+        )
+    }) 
 }
 
 function newCar(req, res) {
