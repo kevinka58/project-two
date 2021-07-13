@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <a href="/cars/new" <%- title === 'Add Car' ? 'class="active"' : '' %>>ADD CARS</a>
-<section id="show-page">
+<!-- <section id="show-page">
   <div>Car Model: </div>
   <div><%= cars.model %></div>
   <div>Model Year: </div>
@@ -10,7 +10,32 @@
   <div><%= cars.color %></div>
   <div>Title Condition: </div>
   <div><%= cars.titleCondition %></div>
-</section>
+</section> -->
+<table>
+  <thead>
+      <tr>
+          <th>Challenger</th>
+          <th>Model</th>
+      </tr>
+  </thead>
+  <tbody>
+      <% cars.forEach(function(c) { %>
+          <tr>
+              <td>
+              <form action="/cars/<%= c._id %>?_method=DELETE"
+                  id="delete-form" method="POST">
+              <button type="submit">X</button>
+          </form>
+              </td>
+              <td><%= c.model %></td>
+              <td><%= c.year %></td>
+              <td><%= c.color %></td>
+              <td><%= c.titleCondition %></td>
+              <td><a href="/cars/<%= c._id %>">Click here</a></td>
+          </tr>
+          <% }); %>
+  </tbody>
+</table>
 
 <br><br><h2>Comment</h2>
 <form id="add-review-form" method="POST"
