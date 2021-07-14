@@ -1,5 +1,10 @@
 <%- include('../partials/header') %>
-<table>
+<header class="masthead">
+    <div class="container">
+      <div id="vehicle-forum" class="masthead-subheading">VEHICLE FOURMS</div>
+    </div>
+    </header>
+<table  class="table table-hover table-dark">
     <thead>
         <tr>
             <th>Model</th>
@@ -9,7 +14,7 @@
         <% cars.forEach(function(c) { %>
             <tr>
                 <td><%= c.model %></td>
-                <td><a href="/cars/<%= c._id %>">Click here</a></td>
+                <td><a class="badge badge-danger" href="/cars/<%= c._id %>">Click here</a></td>
             </tr>
             <% }); %>
     </tbody>

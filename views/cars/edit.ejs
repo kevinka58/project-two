@@ -2,11 +2,13 @@
 
 <% cars.comment.forEach(function(c, idx) { %>
 <form action="/cars/<%= cars.id %>/<%= idx %>?_method=PUT" method="POST"> 
+    <div class="container">
     <label>Comments:</label>
-    <textarea name="content"></textarea>
-    <br/>
+    <textarea class="form-control" name="content"></textarea>
+    </div>
+    <div class="container">
       <label>Car Model:
-      <select value="Select Vehicle" name="model">
+      <select class="form-control" value="Select Vehicle" name="model">
           <option value="Challenger">Challenger</option>
           <option value="Charger">Charger</option>
           <option value="Durango">Durango</option>
@@ -15,13 +17,15 @@
           <option value="Ram-1500">Ram-1500</option>
           </select>
       </label>
-      <br/>
+      </div>
+      <div class="container">
       <label>Model Year: 
-      <input type="number" value="2000" name="year" min="2000" max="2021">
+      <input class="form-control" type="number" value="2000" name="year" min="2000" max="2021">
       </label>
-      <br/>
+      </div>
+      <div class="container">
       <label>Car Color:
-          <select value="Select Vehicle" name="color">
+          <select class="form-control" value="Select Vehicle" name="color">
               <option value="Knuckle-White">Knuckle-White</option>
               <option value="Destroyer-Grey">Destroyer-Grey</option>
               <option value="Hellraisin-Purple">Hellraisin-Purple</option>
@@ -30,16 +34,17 @@
               <option value="Octane-Red">Octane-Red</option>
               </select>
           </label>
-      <br/>
+          </div>
+          <div class="container">
       <label>Title Condition:
-          <select name="titleCondition">
+          <select class="form-control" name="titleCondition">
               <option value="Clean">Clean</option>
               <option value="Salvage">Salvage</option>
               <option value="Rebuilt">Rebuilt</option>
           </select>
       </label>
-      <br/>
-    <button type="submit">UPDATE</button>
+      </div>
+    <button class="form-control" type="submit">UPDATE</button>
   </form>
   <% }); %>
   <%- include('../partials/footer') %>

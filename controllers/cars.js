@@ -12,7 +12,7 @@ async function index(req, res) {
     try {
         const foundCars = await Car.find({});
         res.render('cars/index', {
-            title: 'All Cars',
+            title: 'DODGE',
             cars: foundCars,
             })
         } catch (err) {

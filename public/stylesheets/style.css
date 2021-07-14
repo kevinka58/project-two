@@ -1,6 +1,25 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 40px;
+  font-family: 'Audiowide';font-size: 22px;
+}
+
+ #comment-section {
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header.masthead {
+  padding-top: 10.5rem;
+  padding-bottom: 6rem;
+  text-align: center;
+  color: white;
+  background-color:  black;
+  background-attachment: scroll;
+  background-position: center center;
+  background-size: cover;
+}
+
+header {
+  display: block;
 }
 
 body > nav {
@@ -9,20 +28,25 @@ body > nav {
   border-style: solid;
   border-color: red;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   padding: 0 20px 0 30px;
 }
 
-body {
+#dodge-talk{
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(214, 57, 57);}
+/* body {
   margin: 0;
   height: 100vh;
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
-    "main"
-}
+    "main" */
+/* } */
 
 
 nav > a {

@@ -1,14 +1,21 @@
 <%- include('../partials/header') %>
  <section id="show-page">
 </section>
-<br><br><h2>Comment</h2>
+<header class="masthead">
+<div class="container">
+  <div class="masthead-subheading"><%= title %></div>
+</div>
+</header>
+<h2>Complete Form Below</h2>
 <form id="add-comment-form" method="POST"
   action="/cars/<%= cars._id %>/comments">
+  <div class="form-group">
   <label>Comments:</label>
-  <textarea name="content"></textarea>
-  <br/>
+  <textarea class="form-control" name="content"></textarea>
+</div>
+  <div class="form-group">
     <label>Car Model:
-    <select value="Select Vehicle" name="model">
+    <select class="form-control" value="Select Vehicle" name="model">
         <option value="Challenger">Challenger</option>
         <option value="Charger">Charger</option>
         <option value="Durango">Durango</option>
@@ -17,13 +24,15 @@
         <option value="Ram-1500">Ram-1500</option>
         </select>
     </label>
-    <br/>
+  </div>
+    <div class="form-group">
     <label>Model Year: 
-    <input type="number" value="2000" name="year" min="2000" max="2021">
+    <input class="form-control" type="number" value="2000" name="year" min="2000" max="2021">
     </label>
-    <br/>
+  </div>
+    <div class="form-group">
     <label>Car Color:
-        <select value="Select Vehicle" name="color">
+        <select class="form-control" value="Select Vehicle" name="color">
             <option value="Knuckle-White">Knuckle-White</option>
             <option value="Destroyer-Grey">Destroyer-Grey</option>
             <option value="Hellraisin-Purple">Hellraisin-Purple</option>
@@ -32,23 +41,22 @@
             <option value="Octane-Red">Octane-Red</option>
             </select>
         </label>
-    <br/>
+      </div>
+    <div class="form-group">
     <label>Title Condition:
-        <select name="titleCondition">
+        <select class="form-control" name="titleCondition">
             <option value="Clean">Clean</option>
             <option value="Salvage">Salvage</option>
             <option value="Rebuilt">Rebuilt</option>
         </select>
     </label>
-    <br/>
-    
-    <br/>
-    <button type="submit" value="Add Comment">Add Comment</button>
-
+  </div>
+  <button class="form-control" type="submit" value="Add Comment">Add Comment</button>
+</br>
 </form>
 
 <% if (cars.comment.length) { %>
-  <table>
+  <table id="comment-section" class="table table-hover table-dark">
     <thead>
       <tr>
         <th>Comment</th>
