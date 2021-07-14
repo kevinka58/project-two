@@ -5,7 +5,9 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: black;
+  border-style: solid;
+  border-color: red;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -28,6 +30,11 @@ nav > a {
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
+  color: white;
+}
+
+nav > a:hover{
+  color: red;
 }
 
 

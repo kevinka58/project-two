@@ -6,7 +6,6 @@ module.exports = {
     show,
     new: newCar,
     create,
-    delete: deleteCar,
 };
 
 async function index(req, res) {
@@ -47,12 +46,3 @@ async function create(req, res) {
     }
 }
 
-async function deleteCar(req, res) {
-    try{
-    const car = await Car.findById(req.params.id)
-    await car.remove()
-    res.redirect('/cars')
-} catch (err) {
-    res.send(err)
-    }
-}

@@ -1,19 +1,12 @@
 <%- include('../partials/header') %>
-
  <section id="show-page">
-  <div>Car Model: </div>
-  <div><%= cars.model %></div>
-
-
 </section>
-
-
-
 <br><br><h2>Comment</h2>
-<form id="add-review-form" method="POST"
+<form id="add-comment-form" method="POST"
   action="/cars/<%= cars._id %>/comments">
   <label>Comments:</label>
   <textarea name="content"></textarea>
+  <br/>
     <label>Car Model:
     <select value="Select Vehicle" name="model">
         <option value="Challenger">Challenger</option>
@@ -62,11 +55,18 @@
       </tr>
     </thead>
     <tbody>
-      <% cars.comment.forEach(function(c) { %>
+      <% cars.comment.forEach(function(c, idx) { %>
         <tr>
+          <td>  
+            <form action="/cars/<%= cars.id %>/<%= idx %>?_method=DELETE" method="POST"> 
+
+              <button type="submit">Delete</button>
+            </form>            
+          </td>
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td><strong><%= `${c.model}/${c.year}/${c.color}/${c.titleCondition}`%></strong></td>
+          <td><a href="/cars/<%= cars.id %>/<%= idx %>/edit">Update</a></td>
         </tr>
       <% }); %>
     </tbody>
@@ -74,6 +74,10 @@
 <% } else { %>
   <h5>No Reviews Yet</h5>
 <% } %>
+<form>
+
+
+</form>
 
 
 <%- include('../partials/footer') %>
