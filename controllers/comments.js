@@ -26,11 +26,6 @@ function edit(req, res) {
     }) 
 }
 
-// function update(req, res) {
-//     Car.updateMany(req.params.id, req.body);
-//     req.body.other ? true : false;
-//             res.redirect(`/cars`);
-// }
 
 function update(req, res) {
     Car.findById(req.params.id, function(err, car) {

@@ -51,7 +51,7 @@
         </select>
     </label>
   </div>
-  <button class="form-control" type="submit" value="Add Comment">Add Comment</button>
+  <button id="comment-add" class="form-control" type="submit" value="Add Comment">Add Comment</button>
 </br>
 </form>
 
@@ -68,13 +68,13 @@
           <td>  
             <form action="/cars/<%= cars.id %>/<%= idx %>?_method=DELETE" method="POST"> 
 
-              <button type="submit">Delete</button>
+              <button class="btn btn-danger" type="submit">Delete</button>
             </form>            
           </td>
           <td><%= c.createdAt.toLocaleDateString() %></td>
           <td><%= c.content %></td>
           <td><strong><%= `${c.model}/${c.year}/${c.color}/${c.titleCondition}`%></strong></td>
-          <td><a href="/cars/<%= cars.id %>/<%= idx %>/edit">Update</a></td>
+          <td><a class="badge badge-danger" href="/cars/<%= cars.id %>/<%= idx %>/edit">Update</a></td>
         </tr>
       <% }); %>
     </tbody>
